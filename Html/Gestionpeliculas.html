@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="../Css/estilos.css">
+    <script src="../Js/utilidades.js"></script>
+   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <title>Gestión de peliculas</title>
+</head>
+<body> <br><br>
+    
+
+    <div style="text-align: center;">
+        <h1>Gestión de peliculas</h1>
+    <p style="color: white;">Nombre Original</p> <input type="text"> <br><br>
+    <p style="color: white;">Nombre Asignado</p> <input type="text"> <br><br>
+    <p style="color: white;">Genero</p> <input type="text"> <br><br>
+    <p style="color: white;">Idioma Original</p> <input type="text"> <br><br>
+    <p style="color: white;">Idiomas disponibles</p> <select> 
+    <option value="es">Español</option>
+    <option value="en">Inglés</option>
+    <option value="fr">Francés</option>
+    <option value="de">Alemán</option>
+    <option value="it">Italiano</option>
+    <option value="pt">Portugués</option>
+  </select> <br><br>
+  <p style="color: white;">Subtitulos disponibles</p> <select>
+    <option value="es">Español</option>
+    <option value="en">Inglés</option>
+    <option value="fr">Francés</option>
+    <option value="de">Alemán</option>
+    <option value="it">Italiano</option>
+    <option value="pt">Portugués</option>
+  </select><br><br>
+<br>
+
+
+
+<p style="color: white;">Duración</p> <input type="text" id="tiempoInput" placeholder="Ingrese el tiempo (HH:MM:SS)">
+<button class="btn btn-primary" onclick= "validarTiempo()">Validar</button> <br><br>
+
+  <p style="color: white;">Actores principales</p> <textarea name="" id="" cols="50" rows="3"></textarea><br><br>
+  <p style="color: white;">Actores Secudarios</p> <textarea name="" id="" cols="50" rows="3"></textarea><br><br>
+
+  <p style="color: white;">Numero de afiches disponibles</p> <input type="number"><br><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+  <p style="color: white;">Numero de copias</p> <input type="number"><br><br>&emsp;
+  <p style="color: white;">Productoras pertenecientes</p> <input type="text"><br><br>
+
+  <button class="btn btn-primary" onclick="swal('Registro de pelicula exitoso',':3','success')">Guardar</button>
+  &emsp;
+  <button class="btn btn-primary" >Cancelar</button>
+</div>
+
+
+<script>
+    function validarTiempo() {
+      var tiempoInput = document.getElementById('tiempoInput');
+      var tiempo = tiempoInput.value;
+      
+      // Expresión regular para verificar el formato HH:MM:SS
+      var regex = /^([01]\d|2[0-3]):([0-5]\d):([0-5]\d)$/;
+      
+      if (!regex.test(tiempo)) {
+        alert('Formato de tiempo válido.');
+        return;
+      }
+      
+      // Extraer horas, minutos y segundos
+      var partes = tiempo.split(':');
+      var horas = parseInt(partes[0]);
+      var minutos = parseInt(partes[1]);
+      var segundos = parseInt(partes[2]);
+      
+      // Verificar si las horas, minutos y segundos están dentro de los rangos válidos
+      if (horas < 0 || horas > 8 || minutos < 0 || minutos > 59 || segundos < 0 || segundos > 59) {
+        alert('El tiempo ingresado es válido.');
+        return;
+      }
+      
+      // El tiempo es válido
+      alert('El tiempo ingresado esta fuera de rango: ' + tiempo);
+    }
+  </script>
+</body>
+</html>

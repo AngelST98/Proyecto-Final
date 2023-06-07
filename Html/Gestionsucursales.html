@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="../Css/estilos.css">
+    <script src="../Js/utilidades.js"></script>
+   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <title>Gestión sucursales</title>
+</head>
+<body> <br><br><br>
+<div style="text-align: center;"> 
+    <h1>Gestión sucursales</h1> <br>
+    <form id="myForm">
+
+    <p style="color: white;">Codigo</p> <input type="number"> <br><br>
+
+    <p style="color: white;">Dirección</p> <input type="text"><br><br>
+
+    <p style="color: white;">Departamento</p> <input type="text"><br><br>
+
+    <p style="color: white;">Ciudad</p> <input type="text"><br><br>
+    
+    <p style="color: white;">Gerente encargado</p> <input type="text"><br><br>
+    
+    <p style="color: white;">Número de salas</p> <input type="number" ><br><br>
+
+    <p style="color: white;">Número de trabajadores</p> <input type="number" ><br><br>
+
+    <p style="color: white;">¿Poseé cafeteria?</p> <label>
+
+     <input type="radio" name="sex" value="si">
+        Sí
+      </label>&emsp;
+      <label>
+        <input type="radio" name="sex" value="no"> 
+        No 
+        </label>
+        <br><br><button class="btn btn-primary" onclick="swal('Registro de sucursal exitoso','success')">Guardar</button>
+      &emsp;
+      
+      
+
+        <button type="button" class="btn btn-primary" onclick="deleteItem()">Eliminar</button>
+    </form>
+
+
+      <script>
+        function deleteItem() {
+            console.log("Elemento eliminado");
+        }
+    </script>
+    </div>
+</body>
+</html>
