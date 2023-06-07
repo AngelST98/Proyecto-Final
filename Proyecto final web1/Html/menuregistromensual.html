@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menúregistromensual</title>
+    <link rel="stylesheet" href="../Css/estilos.css">
+    <link rel="stylesheet" href="../Html/bootstrap.min.css">
+</head>
+<body style="background-color: black;">
+
+<style>
+    a{
+        color: aliceblue;
+    }
+
+    .centrarreg{
+        text-align: center;
+        
+        margin: 10px;
+        padding: 10px;
+       
+    }
+    
+</style>
+
+<div class="centrarreg">
+
+    <h1>Menú de registro mensual</h1>
+    <br>
+
+    <select class="form-select" id="miSelect" onchange="redirigir()">
+        <option value="">Selecciona un mes</option>
+        <option value="registromensual.html">ENERO </option>
+        <option value="registromensualfeb.html">FEBRERO</option>
+        <option value="registromensualmarzo.html">MARZO</option>
+        <option value="registromenabril.html">ABRIL</option>
+        <option value="registromay.html">MAYO </option>
+        <option value="registrojunio.html">JUNIO </option>
+        <option value="registrojulio.html">JULIO</option>
+        <option value="registroagosto.html">AGOSTO</option>
+        <option value="registroseptiembre.html">SEPTIEMBRE </option>
+        <option value="registrooct.html">OCTUBRE </option>
+        <option value="registronov.html">NOVIEMBRE </option>
+        <option value="registrodic.html">DICIEMBRE </option>
+      </select>
+      
+      <script>
+        function redirigir() {
+          var selectElement = document.getElementById("miSelect");
+          var selectedValue = selectElement.value;
+          
+          if (selectedValue !== "") {
+            window.location.href = selectedValue;
+          }
+        }
+      </script> 
+    
+</div>
+</body>
+</html>
